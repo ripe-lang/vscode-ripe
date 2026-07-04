@@ -1,0 +1,166 @@
+{
+	"$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+	"name": "Ripe",
+	"scopeName": "source.ripe",
+	"patterns": [
+		{ "include": "#comments" },
+		{ "include": "#strings" },
+		{ "include": "#numbers" },
+		{ "include": "#function-definition-name" },
+		{ "include": "#declaration-keywords" },
+		{ "include": "#control-keywords" },
+		{ "include": "#modifier-keywords" },
+		{ "include": "#operator-keywords" },
+		{ "include": "#builtin-types" },
+		{ "include": "#constants" },
+		{ "include": "#type-annotation" },
+		{ "include": "#operators" }
+	],
+	"repository": {
+
+		"comments": {
+			"name": "comment.line.number-sign.ripe",
+			"begin": "#",
+			"end": "$",
+			"beginCaptures": { "0": { "name": "punctuation.definition.comment.ripe" } }
+		},
+
+		"strings": {
+			"name": "string.quoted.double.ripe",
+			"begin": "\"",
+			"end": "\"",
+			"beginCaptures": { "0": { "name": "punctuation.definition.string.begin.ripe" } },
+			"endCaptures":   { "0": { "name": "punctuation.definition.string.end.ripe" } },
+			"patterns": [
+				{
+					"name": "constant.character.escape.ripe",
+					"match": "\\\\[nt\\\\\"]"
+				},
+				{
+					"comment": "doubled braces are literal { and }, must precede interpolation",
+					"name": "constant.character.escape.ripe",
+					"match": "{{|}}"
+				},
+				{
+					"name": "meta.interpolation.ripe",
+					"begin": "{",
+					"end": "}",
+					"beginCaptures": { "0": { "name": "punctuation.section.interpolation.begin.ripe" } },
+					"endCaptures":   { "0": { "name": "punctuation.section.interpolation.end.ripe" } },
+					"patterns": [{ "include": "#interpolation-body" }]
+				}
+			]
+		},
+
+		"interpolation-body": {
+			"patterns": [
+				{ "include": "#nested-braces" },
+				{ "include": "$self" }
+			]
+		},
+
+		"nested-braces": {
+			"comment": "balance { } inside an interpolation so a nested } does not end it",
+			"begin": "{",
+			"end": "}",
+			"patterns": [{ "include": "#interpolation-body" }]
+		},
+
+		"numbers": {
+			"patterns": [
+				{
+					"name": "constant.numeric.float.ripe",
+					"match": "\\b[0-9]+\\.[0-9]+\\b"
+				},
+				{
+					"name": "constant.numeric.integer.ripe",
+					"match": "\\b[0-9]+\\b"
+				}
+			]
+		},
+
+		"function-definition-name": {
+			"comment": "func name(...)",
+			"match": "\\b(func)\\s+([A-Za-z_][A-Za-z0-9_]*)",
+			"captures": {
+				"1": { "name": "storage.type.function.ripe" },
+				"2": { "name": "entity.name.function.ripe" }
+			}
+		},
+
+		"declaration-keywords": {
+			"name": "storage.type.ripe",
+			"match": "\\b(const|var|func|struct|type)\\b"
+		},
+
+		"control-keywords": {
+			"name": "keyword.control.ripe",
+			"match": "\\b(if|elseif|else|while|for|in|break|continue|return)\\b"
+		},
+
+		"modifier-keywords": {
+			"name": "storage.modifier.ripe",
+			"match": "\\b(extern|inline|public)\\b"
+		},
+
+		"operator-keywords": {
+			"name": "keyword.operator.word.ripe",
+			"match": "\\b(as|sizeof)\\b"
+		},
+
+		"builtin-types": {
+			"name": "support.type.ripe",
+			"match": "\\b(i8|i16|i32|i64|u8|u16|u32|u64|isize|usize|f32|f64|bool|cstr|void)\\b"
+		},
+
+		"constants": {
+			"name": "constant.language.ripe",
+			"match": "\\b(true|false|null|undefined)\\b"
+		},
+
+		"type-annotation": {
+			"comment": ": after a parameter or binding name",
+			"match": "(?<=[A-Za-z0-9_])\\s*(:)",
+			"captures": {
+				"1": { "name": "punctuation.separator.type-annotation.ripe" }
+			}
+		},
+
+		"operators": {
+			"patterns": [
+				{
+					"name": "keyword.operator.comparison.ripe",
+					"match": "==|!=|<=|>=|<|>"
+				},
+				{
+					"name": "keyword.operator.assignment.compound.ripe",
+					"match": "\\+=|-=|\\*=|/="
+				},
+				{
+					"name": "keyword.operator.range.ripe",
+					"match": "\\.\\.=|\\.\\.\\.|\\.\\."
+				},
+				{
+					"name": "keyword.operator.logical.ripe",
+					"match": "&&|\\|\\|"
+				},
+				{
+					"name": "keyword.operator.assignment.ripe",
+					"match": "(?<![=!<>])=(?![=])"
+				},
+				{
+					"name": "keyword.operator.arithmetic.ripe",
+					"match": "[+\\-*/%]"
+				},
+				{
+					"name": "keyword.operator.bitwise.ripe",
+					"match": "<<|>>|[&|~^]"
+				},
+				{
+					"name": "keyword.operator.logical.ripe",
+					"match": "!"
+				}
+			]
+		}
+	}
+}
