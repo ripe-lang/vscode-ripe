@@ -1,0 +1,48 @@
+# Highlighting
+struct point { x: i32, y: i32 }
+
+struct rect { origin: point, w: i32, h: i32 }
+
+const PI: f32 = 3.14159
+const ORIGIN: point = point { x: 0, y: 0 }
+
+extern func printf(fmt: cstr, ...) i32
+
+inline func area(r: rect) i64 {
+  return r.w as i64 * r.h as i64
+}
+
+func classify(n: i32) i32 {
+  if n < 0 { return -1 }
+  elseif n > 0 { return 1 }
+  else { return 0 }
+}
+
+func bits(flags: u8, mask: u8) u8 {
+  return flags & mask | ~mask ^ flags << 1 >> 2
+}
+
+public func main() i32 {
+  var total: i64 = 0
+  var buf: [4]i32 = undefined
+
+  for i in 0..10 {
+    total += i as i64
+    if i == 5 { continue }
+    if i == 9 { break }
+  }
+
+  const size = sizeof(point)
+  const ok: bool = true
+  const nope = false
+  const nothing = null
+
+  const name: cstr = "ramon"
+  printf("hi {name}, area {area(rect { origin: ORIGIN, w: 2, h: 5 })}\n")
+  printf("literal braces {{ and }} plus a tab\tand quote \"\n")
+
+  total *= 2
+  total -= 1
+  total /= 1
+  return classify(total as i32)
+}
