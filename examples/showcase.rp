@@ -1,4 +1,4 @@
-# Highlighting
+// Highlighting
 struct point { x: i32, y: i32 }
 
 struct rect { origin: point, w: i32, h: i32 }

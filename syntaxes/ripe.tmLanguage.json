@@ -19,10 +19,26 @@
 	"repository": {
 
 		"comments": {
-			"name": "comment.line.number-sign.ripe",
-			"begin": "#",
-			"end": "$",
-			"beginCaptures": { "0": { "name": "punctuation.definition.comment.ripe" } }
+			"patterns": [
+				{
+					"name": "comment.line.documentation.ripe",
+					"begin": "///",
+					"end": "$",
+					"beginCaptures": { "0": { "name": "punctuation.definition.comment.ripe" } }
+				},
+				{
+					"name": "comment.line.double-slash.ripe",
+					"begin": "//",
+					"end": "$",
+					"beginCaptures": { "0": { "name": "punctuation.definition.comment.ripe" } }
+				},
+				{
+					"name": "comment.block.ripe",
+					"begin": "/\\*",
+					"end": "\\*/",
+					"captures": { "0": { "name": "punctuation.definition.comment.ripe" } }
+				}
+			]
 		},
 
 		"strings": {

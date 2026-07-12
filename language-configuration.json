@@ -1,6 +1,7 @@
 {
 	"comments": {
-		"lineComment": "#"
+		"lineComment": "//",
+		"blockComment": ["/*", "*/"]
 	},
 	"brackets": [
 		["{", "}"],
@@ -22,8 +23,8 @@
 	"wordPattern": "[A-Za-z_][A-Za-z0-9_]*",
 	"folding": {
 		"markers": {
-			"start": "^\\s*#\\s*region\\b",
-			"end": "^\\s*#\\s*endregion\\b"
+			"start": "^\\s*//\\s*region\\b",
+			"end": "^\\s*//\\s*endregion\\b"
 		}
 	}
 }
