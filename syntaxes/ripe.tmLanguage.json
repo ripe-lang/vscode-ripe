@@ -106,7 +106,7 @@
 
 		"declaration-keywords": {
 			"name": "storage.type.ripe",
-			"match": "\\b(const|var|func|struct|type|newtype)\\b"
+			"match": "\\b(const|let|var|func|struct|type|newtype)\\b"
 		},
 
 		"control-keywords": {
