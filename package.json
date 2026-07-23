@@ -2,11 +2,27 @@
   "name": "vscode-ripe",
   "displayName": "Ripe",
   "description": "Syntax highlighting for the Ripe programming language",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "publisher": "ripe-lang",
+  "license": "MIT",
+  "icon": "icon.png",
+  "homepage": "https://www.ripe-lang.org",
+  "bugs": {
+    "url": "https://github.com/ripe-lang/vscode-ripe/issues"
+  },
   "repository": {
     "type": "git",
     "url": "https://github.com/ripe-lang/vscode-ripe"
+  },
+  "keywords": [
+    "ripe",
+    "syntax",
+    "highlighting",
+    "systems programming"
+  ],
+  "galleryBanner": {
+    "color": "#D95A1E",
+    "theme": "dark"
   },
   "engines": {
     "vscode": "^1.109.0"
@@ -20,7 +36,11 @@
         "id": "ripe",
         "aliases": ["Ripe", "ripe"],
         "extensions": [".rp"],
-        "configuration": "./language-configuration.json"
+        "configuration": "./language-configuration.json",
+        "icon": {
+          "light": "./icon.png",
+          "dark": "./icon.png"
+        }
       }
     ],
     "grammars": [
