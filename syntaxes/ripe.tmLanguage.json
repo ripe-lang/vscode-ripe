@@ -128,7 +128,7 @@
 
 		"control-keywords": {
 			"name": "keyword.control.ripe",
-			"match": "\\b(if|elseif|else|while|for|in|break|continue|return)\\b"
+			"match": "\\b(if|else|while|for|in|break|continue|return)\\b"
 		},
 
 		"modifier-keywords": {
