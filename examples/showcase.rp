@@ -1,21 +1,28 @@
 // Highlighting
+import math.vector
+
 struct point { x: i32, y: i32 }
 
 struct rect { origin: point, w: i32, h: i32 }
 
-const PI: f32 = 3.14159
-const ORIGIN: point = point { x: 0, y: 0 }
+comptime PI: f32 = 3.14159
+let ORIGIN: point = point { x: 0, y: 0 }
 
 extern func printf(fmt: cstr, ...) i32
+extern func malloc(size: usize) *opaque
 
 inline func area(r: rect) i64 {
   return r.w as i64 * r.h as i64
 }
 
 func classify(n: i32) i32 {
-  if n < 0 { return -1 }
-  elseif n > 0 { return 1 }
-  else { return 0 }
+  if n < 0 {
+    return -1
+  } elseif n > 0 {
+    return 1
+  } else {
+    return 0
+  }
 }
 
 func bits(flags: u8, mask: u8) u8 {
@@ -34,15 +41,21 @@ public func main() i32 {
 
   let size = sizeof(point)
   let ok: bool = true
-  const nope = false
-  const nothing = null
+  let nope = false
+  let nothing = null
 
-  const name: cstr = "ramon"
-  printf("hi {name}, area {area(rect { origin: ORIGIN, w: 2, h: 5 })}\n")
-  printf("literal braces {{ and }} plus a tab\tand quote \"\n")
+  let count: u8 = 255u8
+  let big: i64 = 9000000000i64
+  let hex: i32 = 0xff
+  let bin: i32 = 0b1010
+  let oct: i32 = 0o17i32
+
+  let name: cstr = "ramon"
+  printf("hi %s, area %lld\n", name, area(rect { origin: ORIGIN, w: 2, h: 5 }))
+  printf("a tab\tand quote \"\n")
 
   total *= 2
   total -= 1
   total /= 1
-  return classify(total as i32)
+  return classify(total as i32) + math.vector.first()
 }
