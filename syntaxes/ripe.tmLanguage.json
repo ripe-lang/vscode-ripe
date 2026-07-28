@@ -86,6 +86,22 @@
 		"numbers": {
 			"patterns": [
 				{
+					"name": "constant.numeric.hex.ripe",
+					"match": "\\b0[xX][0-9a-fA-F]+(i8|i16|i32|i64|isize|u8|u16|u32|u64|usize)?\\b"
+				},
+				{
+					"name": "constant.numeric.binary.ripe",
+					"match": "\\b0[bB][01]+(i8|i16|i32|i64|isize|u8|u16|u32|u64|usize)?\\b"
+				},
+				{
+					"name": "constant.numeric.octal.ripe",
+					"match": "\\b0[oO][0-7]+(i8|i16|i32|i64|isize|u8|u16|u32|u64|usize)?\\b"
+				},
+				{
+					"name": "constant.numeric.float.ripe",
+					"match": "\\b[0-9]+\\.[0-9]+([eE][+-]?[0-9]+)?\\b"
+				},
+				{
 					"name": "constant.numeric.float.ripe",
 					"match": "\\b[0-9]+[eE][+-]?[0-9]+\\b"
 				},
