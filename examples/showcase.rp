@@ -11,7 +11,7 @@ let ORIGIN: point = point { x: 0, y: 0 }
 extern func printf(fmt: cstr, ...) i32
 extern func malloc(size: usize) *opaque
 
-inline func area(r: rect) i64 {
+func area(r: rect) i64 {
   return r.w as i64 * r.h as i64
 }
 
