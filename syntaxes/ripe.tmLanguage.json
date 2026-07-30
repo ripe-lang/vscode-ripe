@@ -133,7 +133,7 @@
 
 		"modifier-keywords": {
 			"name": "storage.modifier.ripe",
-			"match": "\\b(extern|public)\\b"
+			"match": "\\b(extern|pub)\\b"
 		},
 
 		"operator-keywords": {
