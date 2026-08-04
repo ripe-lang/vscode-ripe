@@ -123,7 +123,7 @@
 
 		"declaration-keywords": {
 			"name": "storage.type.ripe",
-			"match": "\\b(let|var|func|struct|type|newtype|comptime)\\b"
+			"match": "\\b(let|var|func|struct|type|newtype|comptime|module)\\b"
 		},
 
 		"control-keywords": {
