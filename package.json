@@ -34,8 +34,13 @@
     "languages": [
       {
         "id": "ripe",
-        "aliases": ["Ripe", "ripe"],
-        "extensions": [".rp"],
+        "aliases": [
+          "Ripe",
+          "ripe"
+        ],
+        "extensions": [
+          ".rp"
+        ],
         "configuration": "./language-configuration.json",
         "icon": {
           "light": "./icon.png",
@@ -50,5 +55,9 @@
         "path": "./syntaxes/ripe.tmLanguage.json"
       }
     ]
+  },
+  "devDependencies": {
+    "vscode-oniguruma": "^2.0.1",
+    "vscode-textmate": "^9.3.2"
   }
 }
