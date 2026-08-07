@@ -43,6 +43,16 @@ pub func main() i32 {
     if i == 9 { break }
   }
 
+  var tries = 0
+  let answer = loop {
+    tries += 1
+    if tries == 3 { break tries * 14 }
+  }
+
+  outer: loop {
+    loop { break :outer }
+  }
+
   let size = sizeof(point)
   let ok: bool = true
   let nope = false
