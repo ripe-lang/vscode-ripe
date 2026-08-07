@@ -57,5 +57,5 @@ pub func main() i32 {
   total *= 2
   total -= 1
   total /= 1
-  return classify(total as i32) + math.vector.first()
+  return classify(total as i32) + vector.first()
 }
