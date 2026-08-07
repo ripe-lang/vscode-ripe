@@ -50,6 +50,10 @@ pub func main() i32 {
   let bin: i32 = 0b1010
   let oct: i32 = 0o17i32
 
+  let million: int = 1_000_000
+  let masked: i32 = 0xff_ff
+  let ratio: float = 1_000.000_1
+
   let name: cstr = "ramon"
   printf("hi %s, area %lld\n", name, area(rect { origin: ORIGIN, w: 2, h: 5 }))
   printf("a tab\tand quote \"\n")

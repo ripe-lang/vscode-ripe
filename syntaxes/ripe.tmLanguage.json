@@ -87,27 +87,27 @@
 			"patterns": [
 				{
 					"name": "constant.numeric.hex.ripe",
-					"match": "\\b0[xX][0-9a-fA-F]+(i8|i16|i32|i64|isize|u8|u16|u32|u64|usize)?\\b"
+					"match": "\\b0[xX][0-9a-fA-F][0-9a-fA-F_]*(i8|i16|i32|i64|isize|u8|u16|u32|u64|usize)?\\b"
 				},
 				{
 					"name": "constant.numeric.binary.ripe",
-					"match": "\\b0[bB][01]+(i8|i16|i32|i64|isize|u8|u16|u32|u64|usize)?\\b"
+					"match": "\\b0[bB][01][01_]*(i8|i16|i32|i64|isize|u8|u16|u32|u64|usize)?\\b"
 				},
 				{
 					"name": "constant.numeric.octal.ripe",
-					"match": "\\b0[oO][0-7]+(i8|i16|i32|i64|isize|u8|u16|u32|u64|usize)?\\b"
+					"match": "\\b0[oO][0-7][0-7_]*(i8|i16|i32|i64|isize|u8|u16|u32|u64|usize)?\\b"
 				},
 				{
 					"name": "constant.numeric.float.ripe",
-					"match": "\\b[0-9]+\\.[0-9]+([eE][+-]?[0-9]+)?\\b"
+					"match": "\\b[0-9][0-9_]*\\.[0-9][0-9_]*([eE][+-]?[0-9][0-9_]*)?\\b"
 				},
 				{
 					"name": "constant.numeric.float.ripe",
-					"match": "\\b[0-9]+[eE][+-]?[0-9]+\\b"
+					"match": "\\b[0-9][0-9_]*[eE][+-]?[0-9][0-9_]*\\b"
 				},
 				{
 					"name": "constant.numeric.integer.ripe",
-					"match": "\\b[0-9]+(i8|i16|i32|i64|isize|u8|u16|u32|u64|usize)?\\b"
+					"match": "\\b[0-9][0-9_]*(i8|i16|i32|i64|isize|u8|u16|u32|u64|usize)?\\b"
 				}
 			]
 		},
