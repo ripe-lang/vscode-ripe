@@ -11,6 +11,10 @@ let ORIGIN: point = point { x: 0, y: 0 }
 extern func printf(fmt: cstr, ...) i32
 extern func malloc(size: usize) *opaque
 
+func width(s: str) usize {
+  return s.len
+}
+
 func area(r: rect) i64 {
   return r.w as i64 * r.h as i64
 }
@@ -55,11 +59,12 @@ pub func main() i32 {
   let ratio: float = 1_000.000_1
 
   let name: cstr = "ramon"
+  let greeting: str = "héllo"
   printf("hi %s, area %lld\n", name, area(rect { origin: ORIGIN, w: 2, h: 5 }))
   printf("a tab\tand quote \"\n")
 
   total *= 2
   total -= 1
   total /= 1
-  return classify(total as i32) + vector.first()
+  return classify(total as i32) + width(greeting) as i32 + vector.first()
 }
