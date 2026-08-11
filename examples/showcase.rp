@@ -5,6 +5,8 @@ struct point { x: i32, y: i32 }
 
 struct rect { origin: point, w: i32, h: i32 }
 
+enum color { red, green, blue }
+
 comptime PI: f32 = 3.14159
 let ORIGIN: point = point { x: 0, y: 0 }
 
@@ -17,6 +19,14 @@ func width(s: str) usize {
 
 func area(r: rect) i64 {
   return r.w as i64 * r.h as i64
+}
+
+func code(c: color) i32 {
+  return match c {
+    color.red => 10,
+    color.green => 20,
+    _ => 30,
+  }
 }
 
 func classify(n: i32) i32 {

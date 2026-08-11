@@ -127,12 +127,12 @@
 
 		"declaration-keywords": {
 			"name": "storage.type.ripe",
-			"match": "\\b(let|var|func|struct|type|newtype|comptime|module)\\b"
+			"match": "\\b(let|var|func|struct|enum|type|newtype|comptime|module)\\b"
 		},
 
 		"control-keywords": {
 			"name": "keyword.control.ripe",
-			"match": "\\b(if|else|while|for|in|break|continue|return|loop)\\b"
+			"match": "\\b(if|else|while|for|in|break|continue|return|loop|match)\\b"
 		},
 
 		"modifier-keywords": {
