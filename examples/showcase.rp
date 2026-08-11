@@ -67,6 +67,9 @@ pub func main() i32 {
   let million: int = 1_000_000
   let masked: i32 = 0xff_ff
   let ratio: float = 1_000.000_1
+  let scale: f32 = 1.5f32
+  let epsilon: f64 = 1e-9f64
+  let unit: f32 = 1f32
 
   let name: cstr = "ramon"
   let greeting: str = "héllo"

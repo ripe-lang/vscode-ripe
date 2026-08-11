@@ -99,11 +99,15 @@
 				},
 				{
 					"name": "constant.numeric.float.ripe",
-					"match": "\\b[0-9][0-9_]*\\.[0-9][0-9_]*([eE][+-]?[0-9][0-9_]*)?\\b"
+					"match": "\\b[0-9][0-9_]*\\.[0-9][0-9_]*([eE][+-]?[0-9][0-9_]*)?(f32|f64)?\\b"
 				},
 				{
 					"name": "constant.numeric.float.ripe",
-					"match": "\\b[0-9][0-9_]*[eE][+-]?[0-9][0-9_]*\\b"
+					"match": "\\b[0-9][0-9_]*[eE][+-]?[0-9][0-9_]*(f32|f64)?\\b"
+				},
+				{
+					"name": "constant.numeric.float.ripe",
+					"match": "\\b[0-9][0-9_]*(f32|f64)\\b"
 				},
 				{
 					"name": "constant.numeric.integer.ripe",
