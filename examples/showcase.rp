@@ -8,7 +8,7 @@ struct rect { origin: point, w: i32, h: i32 }
 enum color { red, green, blue }
 
 comptime PI: f32 = 3.14159
-let ORIGIN: point = point { x: 0, y: 0 }
+var ORIGIN: point = point { x: 0, y: 0 }
 
 extern func printf(fmt: cstr, ...) i32
 extern func malloc(size: usize) *opaque
@@ -54,7 +54,7 @@ pub func main() i32 {
   }
 
   var tries = 0
-  let answer = loop {
+  var answer = loop {
     tries += 1
     if tries == 3 { break tries * 14 }
   }
@@ -63,26 +63,26 @@ pub func main() i32 {
     loop { break :outer }
   }
 
-  let size = sizeof(point)
-  let ok: bool = true
-  let nope = false
-  let nothing = null
+  var size = sizeof(point)
+  var ok: bool = true
+  var nope = false
+  var nothing = null
 
-  let count: u8 = 255u8
-  let big: i64 = 9000000000i64
-  let hex: i32 = 0xff
-  let bin: i32 = 0b1010
-  let oct: i32 = 0o17i32
+  var count: u8 = 255u8
+  var big: i64 = 9000000000i64
+  var hex: i32 = 0xff
+  var bin: i32 = 0b1010
+  var oct: i32 = 0o17i32
 
-  let million: int = 1_000_000
-  let masked: i32 = 0xff_ff
-  let ratio: float = 1_000.000_1
-  let scale: f32 = 1.5f32
-  let epsilon: f64 = 1e-9f64
-  let unit: f32 = 1f32
+  var million: int = 1_000_000
+  var masked: i32 = 0xff_ff
+  var ratio: float = 1_000.000_1
+  var scale: f32 = 1.5f32
+  var epsilon: f64 = 1e-9f64
+  var unit: f32 = 1f32
 
-  let name: cstr = "ramon"
-  let greeting: str = "héllo"
+  var name: cstr = "ramon"
+  var greeting: str = "héllo"
   printf("hi %s, area %lld\n", name, area(rect { origin: ORIGIN, w: 2, h: 5 }))
   printf("a tab\tand quote \"\n")
 
