@@ -52,12 +52,15 @@
       {
         "language": "ripe",
         "scopeName": "source.ripe",
-        "path": "./syntaxes/ripe.tmLanguage.json"
+        "path": "./syntax/ripe.tmLanguage.json"
       }
     ]
   },
   "devDependencies": {
     "vscode-oniguruma": "^2.0.1",
     "vscode-textmate": "^9.3.2"
+  },
+  "scripts": {
+    "generate": "cd syntax && python3 generate.py"
   }
 }
