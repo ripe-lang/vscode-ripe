@@ -56,7 +56,7 @@ export default function prismIncludeLanguages(Prism) {
         'class-name': /[\w.]+$/,
       },
     },
-    keyword: /\b(?:var|func|struct|enum|type|comptime|module|import|if|else|while|for|in|break|continue|return|loop|match|extern|pub|as|sizeof)\b/,
+    keyword: /\b(?:var|func|struct|enum|type|comptime|module|import|if|else|while|for|in|break|continue|return|loop|match|extern|pub|sizeof|bitcast)\b/,
     builtin: {
       pattern: /\b(?:i8|i16|i32|i64|u8|u16|u32|u64|isize|usize|f32|f64|bool|cstr|char|str|int|float|never|opaque)\b/,
       alias: 'class-name',

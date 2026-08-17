@@ -142,7 +142,7 @@
 
 		"operator-keywords": {
 			"name": "keyword.operator.word.ripe",
-			"match": "\\b(as|sizeof)\\b"
+			"match": "\\b(sizeof|bitcast)\\b"
 		},
 
 		"builtin-types": {

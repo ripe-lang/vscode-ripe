@@ -18,7 +18,7 @@ func width(s: str) usize {
 }
 
 func area(r: rect) i64 {
-  return r.w as i64 * r.h as i64
+  return i64(r.w) * i64(r.h)
 }
 
 func code(c: color) i32 {
@@ -48,7 +48,7 @@ pub func main() i32 {
   var buf: [4]i32 = undefined
 
   for i in 0..10 {
-    total += i as i64
+    total += i64(i)
     if i == 5 { continue }
     if i == 9 { break }
   }
@@ -89,5 +89,5 @@ pub func main() i32 {
   total *= 2
   total -= 1
   total /= 1
-  return classify(total as i32) + width(greeting) as i32 + vector.first()
+  return classify(i32(total)) + i32(width(greeting)) + vector.first()
 }
