@@ -127,7 +127,7 @@
 
 		"declaration-keywords": {
 			"name": "storage.type.ripe",
-			"match": "\\b(var|func|struct|enum|type|newtype|comptime|module)\\b"
+			"match": "\\b(var|func|struct|enum|type|comptime|module)\\b"
 		},
 
 		"control-keywords": {

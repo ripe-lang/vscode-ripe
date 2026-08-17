@@ -1,5 +1,5 @@
 {
-  "declaration": ["var", "func", "struct", "enum", "type", "newtype", "comptime", "module"],
+  "declaration": ["var", "func", "struct", "enum", "type", "comptime", "module"],
   "import": ["import"],
   "control": ["if", "else", "while", "for", "in", "break", "continue", "return", "loop", "match"],
   "modifier": ["extern", "pub"],
