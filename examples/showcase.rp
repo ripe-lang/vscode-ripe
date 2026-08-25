@@ -7,7 +7,7 @@ struct rect { origin: point, w: i32, h: i32 }
 
 enum color { red, green, blue }
 
-comptime PI: f32 = 3.14159
+const PI: f32 = 3.14159
 var ORIGIN: point = point { x: 0, y: 0 }
 
 extern func printf(fmt: cstr, ...) i32
