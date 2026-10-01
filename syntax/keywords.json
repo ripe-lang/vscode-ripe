@@ -1,9 +1,9 @@
 {
-  "declaration": ["var", "func", "struct", "enum", "type", "const", "module"],
+  "declaration": ["var", "fn", "struct", "enum", "type", "const", "module"],
   "import": ["import"],
   "control": ["if", "else", "while", "for", "in", "break", "continue", "return", "loop", "match"],
   "modifier": ["extern", "pub"],
-  "operatorWords": ["sizeof", "bitcast"],
+  "operatorWords": ["sizeof", "cast"],
   "builtinTypes": ["i8", "i16", "i32", "i64", "u8", "u16", "u32", "u64", "isize", "usize", "f32", "f64", "bool", "cstr", "char", "str", "int", "float", "never", "opaque"],
   "booleans": ["true", "false"],
   "languageConstants": ["null", "undefined"],

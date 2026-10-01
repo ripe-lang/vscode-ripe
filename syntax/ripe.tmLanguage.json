@@ -15,7 +15,8 @@
 		{ "include": "#builtin-types" },
 		{ "include": "#constants" },
 		{ "include": "#type-annotation" },
-		{ "include": "#operators" }
+		{ "include": "#operators" },
+		{ "include": "#terminator" }
 	],
 	"repository": {
 
@@ -117,8 +118,8 @@
 		},
 
 		"function-definition-name": {
-			"comment": "func name(...)",
-			"match": "\\b(func)\\s+([A-Za-z_][A-Za-z0-9_]*)",
+			"comment": "fn name(...)",
+			"match": "\\b(fn)\\s+([A-Za-z_][A-Za-z0-9_]*)",
 			"captures": {
 				"1": { "name": "storage.type.function.ripe" },
 				"2": { "name": "entity.name.function.ripe" }
@@ -127,7 +128,7 @@
 
 		"declaration-keywords": {
 			"name": "storage.type.ripe",
-			"match": "\\b(var|func|struct|enum|type|const|module)\\b"
+			"match": "\\b(var|fn|struct|enum|type|const|module)\\b"
 		},
 
 		"control-keywords": {
@@ -142,7 +143,7 @@
 
 		"operator-keywords": {
 			"name": "keyword.operator.word.ripe",
-			"match": "\\b(sizeof|bitcast)\\b"
+			"match": "\\b(sizeof|cast)\\b"
 		},
 
 		"builtin-types": {
@@ -206,6 +207,11 @@
 					"match": "!"
 				}
 			]
+		},
+
+		"terminator": {
+			"name": "punctuation.terminator.statement.ripe",
+			"match": ";"
 		}
 	}
 }
