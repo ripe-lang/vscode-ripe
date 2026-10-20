@@ -2,7 +2,7 @@
   "name": "vscode-ripe",
   "displayName": "Ripe",
   "description": "Syntax highlighting for the Ripe programming language",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "publisher": "ripe-lang",
   "license": "MIT",
   "icon": "icon.png",
@@ -57,7 +57,7 @@
     ]
   },
   "devDependencies": {
-    "@vscode/vsce": "^3.9.2",
+    "@vscode/vsce": "^4.0.0",
     "vscode-oniguruma": "^2.0.1",
     "vscode-textmate": "^9.3.2"
   },
