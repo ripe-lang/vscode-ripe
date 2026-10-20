@@ -66,6 +66,8 @@ main :: fn() -> i32 {
   };
 
   size := sizeof(point);
+  limit ::= size * 2;
+  WIDTH ::: 64;
   ok : bool = true;
   nope := false;
   nothing : ptr = null;

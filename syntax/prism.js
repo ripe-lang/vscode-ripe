@@ -23,15 +23,15 @@ export default function prismIncludeLanguages(Prism) {
     ],
     'function-definition': [
       {
-        pattern: /\b[A-Za-z_]\w*\s*::\s*fn\b/,
+        pattern: /\b[A-Za-z_]\w*\s*:::?\s*fn\b/,
         inside: {
           function: /^\w+/,
-          operator: /::/,
+          operator: /:::?/,
           keyword: /fn$/,
         },
       },
       {
-        pattern: /((?:^|[\n;{])[ \t]*)[A-Za-z_]\w*(?=\s*(?::=|::)\s*(?:extern\s*"[^"]*"\s*)?fn\b)/,
+        pattern: /((?:^|[\n;{])[ \t]*)[A-Za-z_]\w*(?=\s*(?::::|::=|:=|::)\s*(?:extern\s*"[^"]*"\s*)?fn\b)/,
         lookbehind: true,
         alias: 'function',
       },
@@ -43,10 +43,10 @@ export default function prismIncludeLanguages(Prism) {
     ],
     'type-definition': [
       {
-        pattern: /\b[A-Za-z_]\w*\s*::\s*(?:struct|enum)\b/,
+        pattern: /\b[A-Za-z_]\w*\s*:::?\s*(?:struct|enum)\b/,
         inside: {
           'class-name': /^\w+/,
-          operator: /::/,
+          operator: /:::?/,
           keyword: /\w+$/,
         },
       },
@@ -85,7 +85,7 @@ export default function prismIncludeLanguages(Prism) {
     function: /\b[A-Za-z_]\w*(?=\s*\()/,
     number: /\b(?:0[xX][\da-fA-F][\da-fA-F_]*|0[bB][01][01_]*|0[oO][0-7][0-7_]*|\d[\d_]*(?:\.\d[\d_]*)?(?:[eE][+-]?\d[\d_]*)?)(?:i8|i16|i32|i64|isize|u8|u16|u32|u64|usize|f32|f64)?\b/,
     operator:
-      /::|:=|->|=>|\.\.=|\.\.|&&=|\|\|=|<<=?|>>=?|&&|\|\||[+\-*/%&|^]=?|[=!<>]=|[=!~<>]/,
+      /:::|::=|::|:=|->|=>|\.\.=|\.\.|&&=|\|\|=|<<=?|>>=?|&&|\|\||[+\-*/%&|^]=?|[=!<>]=|[=!~<>]/,
     punctuation: /[{}[\]();,.:]/,
   };
 }
