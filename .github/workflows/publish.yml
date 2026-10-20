@@ -1,0 +1,43 @@
+name: Publish
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: publish
+  cancel-in-progress: false
+
+jobs:
+  publish:
+    name: Publish
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+
+      - uses: actions/setup-node@v7
+        with:
+          node-version: 22
+          package-manager-cache: false
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Pick the version
+        id: version
+        run: |
+          published=$(npx vsce show ripe-lang.vscode-ripe --json | jq -r '.versions[0].version')
+          bumped=$(echo "$published" | awk -F. '{ print $1 "." $2 "." $3 + 1 }')
+          manifest=$(node -p "require('./package.json').version")
+          next=$(printf '%s\n%s\n' "$bumped" "$manifest" | sort -V | tail -n 1)
+          echo "Publishing $next over $published"
+          echo "next=$next" >> "$GITHUB_OUTPUT"
+
+      - name: Publish
+        run: npx vsce publish "${{ steps.version.outputs.next }}" --no-update-package-json
+        env:
+          VSCE_PAT: ${{ secrets.VSCE_PAT }}
