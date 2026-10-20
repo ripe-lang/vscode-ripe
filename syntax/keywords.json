@@ -1,12 +1,11 @@
 {
-  "declaration": ["var", "fn", "struct", "enum", "type", "const", "module"],
-  "import": ["import"],
-  "control": ["if", "else", "while", "for", "in", "break", "continue", "return", "loop", "match"],
-  "modifier": ["extern", "pub"],
+  "declaration": ["fn", "struct", "enum"],
+  "control": ["if", "else", "while", "for", "break", "continue", "return", "loop", "match"],
+  "modifier": ["extern"],
   "operatorWords": ["sizeof", "cast"],
-  "builtinTypes": ["i8", "i16", "i32", "i64", "u8", "u16", "u32", "u64", "isize", "usize", "f32", "f64", "bool", "cstr", "char", "str", "int", "float", "never", "opaque"],
+  "builtinTypes": ["i8", "i16", "i32", "i64", "u8", "u16", "u32", "u64", "isize", "usize", "f32", "f64", "bool", "char", "cstr", "str", "never", "ptr", "type"],
   "booleans": ["true", "false"],
-  "languageConstants": ["null", "undefined"],
+  "languageConstants": ["null"],
   "intSuffixes": ["i8", "i16", "i32", "i64", "isize", "u8", "u16", "u32", "u64", "usize"],
   "floatSuffixes": ["f32", "f64"]
 }

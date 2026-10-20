@@ -7,7 +7,6 @@ with open("keywords.json") as f:
 constants = words["booleans"] + words["languageConstants"]
 all_keywords = (
     words["declaration"]
-    + words["import"]
     + words["control"]
     + words["modifier"]
     + words["operatorWords"]
@@ -24,7 +23,6 @@ for key, group in [
     ("operator-keywords", words["operatorWords"]),
     ("builtin-types", words["builtinTypes"]),
     ("constants", constants),
-    ("imports", words["import"]),
 ]:
     tm = re.sub(
         rf'("{key}":[\s\S]{{0,300}}?"match": "\\\\b\()[^)]*(\))',
@@ -49,7 +47,6 @@ with open("ripe.tmLanguage.json", "w") as f:
     f.write(tm)
 
 prism_rules = [
-    (r"('import-path': \{\s*pattern: /\\b\()[^)]*(\))", words["import"] + ["module"]),
     (r"(keyword: /\\b\(\?:)[^)]*(\))", all_keywords),
     (r"(builtin: \{\s*pattern: /\\b\(\?:)[^)]*(\))", words["builtinTypes"]),
     (r"(boolean: /\\b\(\?:)[^)]*(\))", words["booleans"]),
